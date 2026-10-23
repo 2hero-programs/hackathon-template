@@ -1,5 +1,5 @@
 {
-  "name": "Saab Dynamics hackathon",
+  "name": "2Hero Hackathon",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "hostRequirements": {
     "cpus": 4,
@@ -28,10 +28,7 @@
   "containerEnv": {
     "OPENROUTER_BASE_URL": "https://openrouter.ai/api/v1"
   },
-  "secrets": {
-    "OPENROUTER_API_KEY": {
-      "description": "Your team's OpenRouter key. The organisers set it as a Codespaces secret on this repository; never commit it.",
-      "documentationUrl": "https://openrouter.ai/docs"
-    }
+  "remoteEnv": {
+    "AHL_BOM_KEY": "${localEnv:OPENROUTER_API_KEY}"
   }
 }
