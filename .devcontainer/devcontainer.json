@@ -15,7 +15,8 @@
       ]
     }
   },
-  "postCreateCommand": "curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash && sudo apt-get install -y poppler-utils && echo '\u2713 Hackathon codespace ready'",
+  "postCreateCommand": "sudo rm -f /etc/apt/sources.list.d/yarn.list && curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash && sudo apt-get install -y poppler-utils && echo '\u2713 Hackathon codespace ready'",
+  "postStartCommand": "command -v az >/dev/null && command -v pdftotext >/dev/null || (sudo rm -f /etc/apt/sources.list.d/yarn.list && curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash && sudo apt-get install -y poppler-utils)",
   "containerEnv": {
     "OPENROUTER_BASE_URL": "https://openrouter.ai/api/v1"
   },
